@@ -19,38 +19,38 @@ function win(userChoice) {
     userScore++;
     userScore_span.innerHTML = userScore;
     if (userChoice === 'r') {
-        result_p.innerHTML = "Rock"+ "user ".fontsize(3).sub() +"smashed Scissor"+ "comp ".fontsize(3).sub() + ".You Win!";
+        result_p.innerHTML = "Rock" + "user ".fontsize(3).sub() + "smashed Scissor" + "comp ".fontsize(3).sub() + ".You Win!";
     }
     else if (userChoice === 's') {
-        result_p.innerHTML = "Scissor"+ "user ".fontsize(3).sub() +"cuts Paper"+ "comp ".fontsize(3).sub() + ".You Win!";
+        result_p.innerHTML = "Scissor" + "user ".fontsize(3).sub() + "cuts Paper" + "comp ".fontsize(3).sub() + ".You Win!";
     }
     else {
-        result_p.innerHTML = "Paper"+ "user ".fontsize(3).sub() +"covers Rock"+ "comp ".fontsize(3).sub() + ".You Win!";
+        result_p.innerHTML = "Paper" + "user ".fontsize(3).sub() + "covers Rock" + "comp ".fontsize(3).sub() + ".You Win!";
     }
     document.getElementById(userChoice).classList.add('greenGlow');
-    setTimeout(function() { document.getElementById(userChoice).classList.remove('greenGlow');}, 500);
+    setTimeout(function () { document.getElementById(userChoice).classList.remove('greenGlow'); }, 500);
 }
 
 function lose(userChoice) {
     compScore++;
     compScore_span.innerHTML = compScore;
     if (userChoice === 'r') {
-        result_p.innerHTML = "Rock"+ "user ".fontsize(3).sub() +"covered by Paper"+ "comp ".fontsize(3).sub() + ".You Lose!";
+        result_p.innerHTML = "Rock" + "user ".fontsize(3).sub() + "covered by Paper" + "comp ".fontsize(3).sub() + ".You Lose!";
     }
     else if (userChoice === 's') {
-        result_p.innerHTML = "Scissor"+ "user ".fontsize(3).sub() +"smashed by Rock"+ "comp ".fontsize(3).sub() + ".You Lose!";
+        result_p.innerHTML = "Scissor" + "user ".fontsize(3).sub() + "smashed by Rock" + "comp ".fontsize(3).sub() + ".You Lose!";
     }
     else {
-        result_p.innerHTML = "Paper"+ "user ".fontsize(3).sub() +"cutted by Scissor"+ "comp ".fontsize(3).sub() + ".You Lose!";
+        result_p.innerHTML = "Paper" + "user ".fontsize(3).sub() + "cutted by Scissor" + "comp ".fontsize(3).sub() + ".You Lose!";
     }
     document.getElementById(userChoice).classList.add('redGlow');
-    setTimeout(function() { document.getElementById(userChoice).classList.remove('redGlow');}, 500)
+    setTimeout(function () { document.getElementById(userChoice).classList.remove('redGlow'); }, 500)
 }
 
 function draw(userChoice) {
     result_p.innerHTML = "Selected Same. It's a Draw!";
     document.getElementById(userChoice).classList.add('greyGlow');
-    setTimeout(function() { document.getElementById(userChoice).classList.remove('greyGlow');}, 500);
+    setTimeout(function () { document.getElementById(userChoice).classList.remove('greyGlow'); }, 500);
 }
 
 function game(userChoice) {
@@ -84,13 +84,13 @@ function main() {
     scissor_div.addEventListener('click', function () {
         game("s");
     });
-    restart.addEventListener('click', function() {
+    restart.addEventListener('click', function () {
         userScore = 0;
         compScore = 0;
         userScore_span.innerHTML = userScore;
-        compScore_span.innerHTML = compScore;    
+        compScore_span.innerHTML = compScore;
         restart.classList.add('orangeGlow');
-        setTimeout(function() { restart.classList.remove('orangeGlow');}, 500);
+        setTimeout(function () { restart.classList.remove('orangeGlow'); }, 500);
         result_p.innerHTML = "Start the Game.";
     });
 }
